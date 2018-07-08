@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order("position ASC")
   end
 
   # GET /tasks/1
@@ -72,8 +72,8 @@ class TasksController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def current_position
-      return 0 if Task.all.empty?
-      Task.maximum('position') + 1
+      return 1 if Task.all.empty?
+      Task.position.maximum('position') + 1
     end
 
     def set_task
