@@ -4,7 +4,7 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all.order("position ASC")
+    @tasks = Task.all.order(:position)
   end
 
   # GET /tasks/1
@@ -67,13 +67,18 @@ class TasksController < ApplicationController
     redirect_to @tasks, notice: "Task is done!"
   end
 
+  def sort
+    params[:task].each_with_index do |id, index|
+        Task.where(id: id).update_all(position: index + 1)
+    end
+end
 
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def current_position
       return 1 if Task.all.empty?
-      Task.position.maximum('position') + 1
+      Task.maximum('position') + 1
     end
 
     def set_task

@@ -48,6 +48,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'pry'
 end
 
 group :test do
@@ -60,6 +61,13 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'font-awesome-sass', '~> 5.0', '>= 5.0.13'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 #reorders indeces of list when order is changed
 gem 'acts_as_list'
+
+gem 'bootstrap', '~> 4.1', '>= 4.1.1'
+
+gem 'responders', '~> 2.3'
