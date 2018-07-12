@@ -15,9 +15,10 @@ Make sure you have [Ruby]and [Rails](https://www.ruby-lang.org) as well as [Bund
 git clone https://github.com/angelikayoder/task_list.git # or download the file
 gem install bundler
 bundle install
+rails s
 ```
 
-Your app should now be running on [localhost:3000](http://localhost:3000/).
+Your app should now be running in your browser on [localhost:3000](http://localhost:3000/).
 
 ### Updates
 As of 12:29am on Thursday 7/12/2018
