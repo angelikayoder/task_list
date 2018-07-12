@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     end
   end
   root 'tasks#index'
+  get '/complete/:id', to: 'tasks#complete', as: 'complete'
 end

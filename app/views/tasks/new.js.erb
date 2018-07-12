@@ -1,0 +1,5 @@
+// The j is shorthand syntax for escape_javascript, which is required to embed in ruby code directly inside a line of Javascript.
+// The second line hides the new task button from the DOM to prevent the user from rendering multiple forms.
+
+$('.new-task-button').after('<%= j render('form') %>');
+$('.new-task-button').hide();

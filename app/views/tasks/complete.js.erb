@@ -1,0 +1,6 @@
+// The first line removes the task from the DOM.
+// The second line appends the complete task to the complete-tasks CSS class.
+// The third line adds a strikethrough to heading within the task to make the complete tasks stand out.
+
+$('#task_<%= @task.id %>').remove();
+$('.completed-tasks ul:first').delay(500).append('<%= j render partial: "task", locals: { task: @task } %>');

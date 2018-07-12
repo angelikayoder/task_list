@@ -1,0 +1,10 @@
+<li id="task_<%= task.id %>" class="list-group-item <%= 'completed' if task.is_done? %>">
+  <%= div_for task do %>
+    <h3 class="text-primary"><%= task.title %></h3>
+    <ul class="list-inline">
+      <li class="list-inline-item"><%= link_to "Edit Task", edit_task_path(task), remote: true %></li>
+      <li class="list-inline-item"><%= link_to "Mark Complete", complete_path(task), remote: true %></li>
+      <li class="list-inline-item"><%= link_to "Delete Task", task, remote: true, method: :delete %></li>
+    </ul>
+  <% end %>
+</li>

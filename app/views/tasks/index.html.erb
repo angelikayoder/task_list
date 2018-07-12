@@ -1,40 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1 class="mb-5 pb-3">Tasks</h1>
-
-
-
-
-<div id="tasks" class="list-group" data-url="<%= sort_tasks_path %>">
-  <% @tasks.each do |task| %>
-    <%= link_to task.title, task, class: "list-group-item", id: dom_id(task) %>
-  <% end %>
-</div>
-
-<!-- <table class="mt-5 pt-3 table-hover table-borderless bg-white text-dark">
-  <thead>
-    <tr>
-      <th class="mr-3 pr-3">Position</th>
-      <th class="mx-3 px-3">Title</th>
-      <th class="mx-3 px-3">Is done</th>
-      <th colspan="3" class="mx-auto px-auto"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class='completed-tasks card text-primary'>
+  <div class="card-header" >
+    Tasks
+  </div>
+  <div class="container new-task">
+    <%= render partial: "form", locals: { task: Task.new } %>
+  </div>
+  <ul class="list-group" data-url="<%= sort_tasks_path %>">
     <% @tasks.each do |task| %>
-      <tr>
-        <td class="ml-3 pl-3"><%= task.position %></td>
-        <td class="ml-5 pl-4"><%= task.title %></td>
-        <td class="ml-5 pl-4"><%= task.is_done %></td>
-        <td class="mx-auto px-auto"><%= link_to 'Show', task %></td>
-        <td class="mx-auto px-auto"><%= link_to 'Edit', edit_task_path(task) %></td>
-        <td class="mx-auto px-auto"><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <%= render task %>
     <% end %>
-  </tbody>
-</table> -->
-
-<br>
-
-<%= link_to 'New Task', new_task_path %>
+  </ul>
+</div>

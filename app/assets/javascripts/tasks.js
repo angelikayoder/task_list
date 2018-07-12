@@ -1,6 +1,6 @@
 document.addEventListener("turbolinks:load", function() {
 
-  $("#tasks").sortable({
+  $(".completed-tasks ul:first").sortable({
     update: function(e, ui) {
       Rails.ajax({
         url: $(this).data("url"),

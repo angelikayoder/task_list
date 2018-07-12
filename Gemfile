@@ -71,3 +71,6 @@ gem 'acts_as_list'
 gem 'bootstrap', '~> 4.1', '>= 4.1.1'
 
 gem 'responders', '~> 2.3'
+
+# runs div_for 
+gem 'record_tag_helper', '~> 1.0'

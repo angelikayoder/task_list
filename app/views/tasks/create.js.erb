@@ -1,0 +1,2 @@
+$('.completed-tasks ul:first').prepend('<%= j render partial: "task", locals: { task: @task } %>');
+$('.new-task form input[type=text]').val('');

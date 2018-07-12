@@ -1,10 +1,14 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  respond_to :html
+  respond_to :js
+
   # GET /tasks
   # GET /tasks.json
   def index
     @tasks = Task.all.order(:position)
+    respond_with(@tasks)
   end
 
   # GET /tasks/1
@@ -26,30 +30,13 @@ class TasksController < ApplicationController
   # POST /tasks.json
   def create
     @task = Task.new(task_params)
-
-    respond_to do |format|
-      if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
-      else
-        format.html { render :new }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
-    end
+    @task.save
   end
 
   # PATCH/PUT /tasks/1
   # PATCH/PUT /tasks/1.json
   def update
-    respond_to do |format|
-      if @task.update(task_params)
-        format.html { redirect_to @task, notice: 'Task was successfully updated.' }
-        format.json { render :show, status: :ok, location: @task }
-      else
-        format.html { render :edit }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
-      end
-    end
+    @task.update(task_params)
   end
 
   # DELETE /tasks/1
@@ -63,8 +50,9 @@ class TasksController < ApplicationController
   end
 
   def complete
-    @task.update_attribute(:is_done, true)
-    redirect_to @tasks, notice: "Task is done!"
+    @task = Task.find(params[:id])
+    @task.mark_complete!
+    @task.move_to_bottom
   end
 
   def sort
