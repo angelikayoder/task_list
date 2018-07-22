@@ -20,7 +20,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       post tasks_url, params: { task: { is_done: @task.is_done, position: @task.position, title: @task.title } }
     end
 
-    assert_redirected_to task_url(Task.last)
+    assert_response :success
   end
 
   test "should show task" do
@@ -35,7 +35,8 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test "should update task" do
     patch task_url(@task), params: { task: { is_done: @task.is_done, position: @task.position, title: @task.title } }
-    assert_redirected_to task_url(@task)
+    # assert_redirected_to task_url(@task)
+    assert_response :success
   end
 
   test "should destroy task" do

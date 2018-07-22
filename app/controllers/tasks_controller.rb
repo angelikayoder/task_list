@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, except: [:create, :update]
   respond_to :js
 
   # GET /tasks

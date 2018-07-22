@@ -10,6 +10,8 @@ class Task < ApplicationRecord
   end
 
   def mark_complete!
-    self.update_attribute(:is_done, true)
+    update_attribute(:is_done, true)
   end
 end
+
+# undeeded comment
