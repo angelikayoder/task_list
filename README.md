@@ -21,6 +21,9 @@ rails s
 Your app should now be running in your browser on [localhost:3000](http://localhost:3000/).
 
 ### Updates
+As of 10:55am on Monday 7/23/2018
+- Added tests to controller which cover non scaffolded methods.
+
 As of 12:29am on Thursday 7/12/2018
 - App's functionality is complete.
 - Styling is badly needed to pretty-up the app, additional styling will be added as time allows.
