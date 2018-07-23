@@ -11,7 +11,6 @@ class Task < ApplicationRecord
 
   def mark_complete!
     update_attribute(:is_done, true)
+    move_to_bottom
   end
 end
-
-# undeeded comment

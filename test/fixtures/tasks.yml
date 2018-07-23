@@ -6,6 +6,6 @@ one:
   is_done: false
 
 two:
-  position: 1
+  position: 2
   title: MyString
   is_done: false
