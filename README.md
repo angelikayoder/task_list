@@ -11,6 +11,8 @@ You can...
 ## Running Locally
 
 Make sure you have [Ruby]and [Rails](https://www.ruby-lang.org) as well as [Bundler](http://bundler.io)
+
+This app uses Rails 5.2.0, ruby 2.5.1 and uses Puma 3.11 as the app server.
 ```sh
 git clone https://github.com/angelikayoder/task_list.git # or download the file
 gem install bundler
