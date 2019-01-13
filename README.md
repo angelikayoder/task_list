@@ -12,7 +12,7 @@ You can...
 
 Make sure you have [Ruby]and [Rails](https://www.ruby-lang.org) as well as [Bundler](http://bundler.io)
 
-This app uses Rails 5.2.0, ruby 2.5.1 and uses Puma 3.11 as the app server.
+This app uses Rails 5.2.2, ruby 2.5.1 and uses Puma 3.11 as the app server.
 ```sh
 git clone https://github.com/angelikayoder/task_list.git # or download the file
 gem install bundler
@@ -23,6 +23,9 @@ rails s
 Your app should now be running in your browser on [localhost:3000](http://localhost:3000/).
 
 ### Updates
+As of 1/13/2019
+- Updated Rails and Nokogiri gem versions to combat known vulnerabilities.
+
 As of 10:55am on Monday 7/23/2018
 - Added tests to controller which cover non scaffolded methods.
 
