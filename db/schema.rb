@@ -12,14 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2018_07_05_153531) do
 
-  create_table "lists", force: :cascade do |t|
-    t.integer "position"
-    t.string "title"
-    t.boolean "is_done"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.integer "position"
     t.string "title"
